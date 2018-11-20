@@ -1,0 +1,25 @@
+<div class="jumbotron text-center bg-light" style="margin:5%;">
+  <h2>You Enrolled For <strong>{{ courseName }}</strong></h2>
+  <p>You will recieve a mail containing id & password after successful payment.</p>
+  <hr>
+  <h4 class="text-primary">Payment Gateway</h4><br>
+
+
+
+  <table class="table table-hover table-striped table-condensed" style="margin:0 auto;">
+    <tr>
+      <td><strong>Course Name</strong></td><td>{{courseDetails | slice:3:4}}</td>
+    </tr>
+    <tr>  
+      <td><strong>Course Cost</strong></td><td>{{courseCost | currency:'INR':true}}</td>
+    </tr>
+    <tr>  
+      <td><strong>Course Discount</strong></td><td>{{ courseDisc  }}%</td>
+    </tr>
+    <tr class="bg-dark text-danger">
+      <th>Total Cost</th><th>{{ courseCost - courseCost/100*courseDisc | currency:'INR':true }}</th>
+    </tr>
+  </table>
+  <br>
+  <a type="button" href="https://www.paypal.com/in/webapps/mpp/home?gclsrc=aw.ds&gclid=CjwKCAjwsfreBRB9EiwAikSUHXeX4pBhBtOROuQcoJBsibrKE8kGUboT7wdPnX89xyFcSoJzvkwiaxoCUOQQAvD_BwE&gclsrc=aw.ds" type="button" class="btn btn-success">Pay</a>
+</div>
